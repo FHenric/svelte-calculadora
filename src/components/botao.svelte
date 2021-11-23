@@ -7,7 +7,10 @@
     
 </script>
 
-<button class='botao' class:triplo class:duplo class:operacao class:destaque>
+<button 
+    class='botao' 
+    on:click
+    class:triplo class:duplo class:operacao class:destaque>
     {texto}
 </button>
 

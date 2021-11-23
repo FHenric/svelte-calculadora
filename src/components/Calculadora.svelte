@@ -1,9 +1,11 @@
 <script>
 	import Linha from './Linha.svelte';
     import Botao from './botao.svelte';
+    import Tela from './display.svelte';
 </script>
 
 <div class="calculadora">
+    <Tela valor='012345678910111111112'/>
     <Linha>
         <Botao destaque triplo texto = "AC"/>
         <Botao operacao texto = "/"/>
@@ -48,4 +50,5 @@
         display: flex;
         flex-direction: column;
     }
+    
 </style>
