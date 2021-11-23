@@ -4,12 +4,12 @@
     export let duplo = false
     export let operacao = false
     export let destaque = false
-    
+    export let onClick = (valor) => () => {}
 </script>
 
 <button 
     class='botao' 
-    on:click
+    on:click={() => onClick(texto)}
     class:triplo class:duplo class:operacao class:destaque>
     {texto}
 </button>
