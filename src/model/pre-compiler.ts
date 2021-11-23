@@ -12,7 +12,7 @@ export default class CalculadoraModel {
     limparTela: boolean
     operacao: string
     
-    constructor(valor: string = '0', acumulador: number = 0, operacao:string = '0', limparTela = false){
+    constructor(valor: string = '', acumulador: number = 0, operacao:string = '0', limparTela = false){
         this.valor = valor
         this.acumulador = acumulador
         this.limparTela = limparTela
@@ -24,9 +24,17 @@ export default class CalculadoraModel {
     }
 
     numeroDigitado(novoValor: string) {
-        console.log(novoValor)
         return new CalculadoraModel(
             (this.limparTela || !this.valor) ? novoValor : this.valor + novoValor,
+            this.acumulador,
+            this.operacao,
+            NAO_LIMPAR_TELA,
+        )
+    }
+
+    pontoDigitado() {
+        return new CalculadoraModel(
+            this.valor?.includes(',') ? this.valor : this.valor + ',',
             this.acumulador,
             this.operacao,
             NAO_LIMPAR_TELA,
